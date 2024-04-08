@@ -8,6 +8,7 @@ const rules = document.querySelector('.rules');
 const improve = document.getElementById('improve');
 const bmiPrime = document.getElementById('bmiPrime');
 const ponderal = document.getElementById('ponderal');
+const bmiStatus = document.getElementById('bmiStatus');
 const minBMI = 18.5;
 const maxBMI = 25;
 
@@ -38,6 +39,7 @@ function calcBMI () {
     bmi.innerHTML = `${bmiValue} kg/m<sup>2</sup>`;
     bmiPrime.innerHTML = `BMI Prime: ${calcPrime()}`;
     ponderal.innerHTML = `Ponderal Index: ${calcPonderal()}`;
+    bmiStatus.innerHTML = `You are : ${checkWeight()}`;
 }
 
 function checkWeight () {
