@@ -7,6 +7,7 @@ const bmi = document.getElementById('bmi');
 const rules = document.querySelector('.rules');
 const improve = document.getElementById('improve');
 const bmiPrime = document.getElementById('bmiPrime');
+const ponderal = document.getElementById('ponderal');
 const minBMI = 18.5;
 const maxBMI = 25;
 
@@ -35,7 +36,8 @@ function calcBMI () {
     bmiValue = (weightValue/(heightInMeter * heightInMeter)).toFixed(2);
     
     bmi.innerHTML = `${bmiValue} kg/m<sup>2</sup>`;
-    bmiPrime.innerHTML = `BMI Prime: ${(bmiValue/25).toFixed(2)}`;
+    bmiPrime.innerHTML = `BMI Prime: ${calcPrime()}`;
+    ponderal.innerHTML = `Ponderal Index: ${calcPonderal()}`;
 }
 
 function checkWeight () {
@@ -48,4 +50,15 @@ function checkWeight () {
     } else if(bmiValue > 30) {
         return 'Obese';
     }
+}
+
+function calcPrime () {
+    let primeBMI = 25;
+    return (bmiValue/primeBMI).toFixed(2);
+}
+
+function calcPonderal () {
+    let heightInMeter = heightValue/100;
+    let ponderalHeight = heightInMeter * heightInMeter * heightInMeter;
+    return (weightValue/ponderalHeight).toFixed(2);
 }
