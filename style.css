@@ -50,7 +50,9 @@ input {
     background-color: #fff;
 }
 
-
+.progress {
+    height: 100%;
+}
 
 
 

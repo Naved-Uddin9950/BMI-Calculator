@@ -9,6 +9,7 @@ const improve = document.getElementById('improve');
 const bmiPrime = document.getElementById('bmiPrime');
 const ponderal = document.getElementById('ponderal');
 const bmiStatus = document.getElementById('bmiStatus');
+const progress = document.querySelector('.progress');
 const minBMI = 18.5;
 const maxBMI = 25;
 
@@ -40,6 +41,7 @@ function calcBMI () {
     bmiPrime.innerHTML = `BMI Prime: ${calcPrime()}`;
     ponderal.innerHTML = `Ponderal Index: ${calcPonderal()}`;
     bmiStatus.innerHTML = `You are : ${checkWeight()}`;
+    checkProgress();
 }
 
 function checkWeight () {
@@ -63,4 +65,19 @@ function calcPonderal () {
     let heightInMeter = heightValue/100;
     let ponderalHeight = heightInMeter * heightInMeter * heightInMeter;
     return (weightValue/ponderalHeight).toFixed(2);
+}
+
+function checkProgress () {
+    let minProgress = 0;
+    let maxProgress = 100;
+    let width = (bmiValue/30) * 100;
+
+    if(width <= maxProgress && width >= minProgress) {
+        progress.style = `width: ${width}%; background-color: red`;
+        console.log(width)
+    } else if(width > maxProgress) {
+        progress.style = `width: 100%; background-color: red`;
+    } else {
+        progress.style = `width: 0%; background-color: white`;
+    }
 }
