@@ -71,13 +71,25 @@ function checkProgress () {
     let minProgress = 0;
     let maxProgress = 100;
     let width = (bmiValue/30) * 100;
+    let color = 'white';
 
     if(width <= maxProgress && width >= minProgress) {
-        progress.style = `width: ${width}%; background-color: red`;
-        console.log(width)
+        if(checkWeight() == 'Underweight') {
+            color = '#3498db';
+        } else if(checkWeight() == 'Normal') {
+            color = '#2ecc71';
+        } else if (checkWeight() == 'Overweight') {
+            color = '#f1c40f';
+        } else if(checkWeight() == 'Obese') {
+            color = '#e74c3c';
+        }
     } else if(width > maxProgress) {
-        progress.style = `width: 100%; background-color: red`;
+        width = 100;
+        color = 'red';
     } else {
-        progress.style = `width: 0%; background-color: white`;
+        width = 0;
+        color = 'white';
     }
+
+    progress.style = `width: ${width}%; background-color: ${color}`;
 }

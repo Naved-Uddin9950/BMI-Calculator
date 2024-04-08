@@ -42,7 +42,11 @@ input {
 }
 
 /* Right side / Result screen */
-.right-container { background-color: steelblue; }
+.right-container { background-color: teal; }
+
+.rules {
+    margin: 0px 0px 0px 20px;
+}
 
 .scale {
     width: 80%;
