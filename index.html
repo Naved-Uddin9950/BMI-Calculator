@@ -13,13 +13,14 @@
         <div class="left-container">
             <!-- User Age -->
             <div class="user-input">
-                <label for="age">Age : </label>
+                <label for="age">Age (year) : </label>
                 <input type="number" name="age" id="age" placeholder="18" min="2" max="120">
                 <div class="error"></div>
             </div>
                 
             <!-- User Gender -->
             <div class="user-input">
+                <label for="gender">Gender : </label>
                 <label for="male">Male</label>
                 <input type="radio" name="gender" id="male" value="male" checked>
                 <label for="female">Female</label>
@@ -42,9 +43,19 @@
 
         <!-- Right container / Result Screen -->
         <div class="right-container">
-            <div class="heading">Result</div>
+            <div class="heading">
+                <h1>Result</h1>
+                <h3>BMI = </h3>
+            </div>
             <div class="scale"></div>
-            <div class="rules"></div>
+            <div class="rules">
+                <ul>
+                    <li>Healthy BMI range: 18.5 kg/m<sup>2</sup> - 25 kg/m<sup>2</sup></li>
+                    <li>Healthy weight for the height: </li>
+                    <li>BMI Prime: </li>
+                    <li>Ponderal Index: </li>
+                </ul>
+            </div>
         </div>
     </div>
 
