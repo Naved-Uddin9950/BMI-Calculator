@@ -7,7 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Left container / inputs from user -->
+        <div class="left-container">
+            <!-- User Age -->
+            <div class="user-input">
+                <label for="age">Age : </label>
+                <input type="number" name="age" id="age" placeholder="18" min="2" max="120">
+                <div class="error"></div>
+            </div>
+                
+            <!-- User Gender -->
+            <div class="user-input">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male" value="male" checked>
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="female" value="female">
+            </div>
+
+            <!-- User Height -->
+            <div class="user-input">
+                <label for="height">Height (cm) : </label>
+                <input type="number" name="height" id="height" placeholder="165" required>
+            </div>
+
+            <!-- User Weight -->
+            <div class="user-input">
+                <label for="weight">Weight (kg) : </label>
+                <input type="number" name="weight" id="weight" placeholder="48" required>
+            </div>
+        </div>
+
+
+        <!-- Right container / Result Screen -->
+        <div class="right-container">
+            <div class="heading">Result</div>
+            <div class="scale"></div>
+            <div class="rules"></div>
+        </div>
+    </div>
 
 
 
